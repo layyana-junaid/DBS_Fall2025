@@ -2,6 +2,7 @@
 Layyana Junaid 23k-0056
 
 **Database Labs Repository**
+
 This repo serves as both a **learning journal** and a **reference guide** for everything I practice in SQL and database concepts during my labs.
 
 ---
