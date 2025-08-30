@@ -13,14 +13,14 @@ This repo serves as both a **learning journal** and a **reference guide** for ev
 
 
 ## 💾 Database Tech Stack
-
 <p align="center">
-  <img src="https://img.shields.io/badge/SQL-006400?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Oracle-228B22?style=for-the-badge&logo=oracle&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PLSQL-2E8B57?style=for-the-badge&logo=databricks&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Database-3CB371?style=for-the-badge&logo=mysql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/ERD%20Design-32CD32?style=for-the-badge&logo=drawio&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQL-2E8B57?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Oracle-3CB371?style=for-the-badge&logo=oracle&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PLSQL-228B22?style=for-the-badge&logo=databricks&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Database-006400?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ERD%20Design-00A36C?style=for-the-badge&logo=diagrams.net&logoColor=white"/>
 </p>
+
 
 ---
 
