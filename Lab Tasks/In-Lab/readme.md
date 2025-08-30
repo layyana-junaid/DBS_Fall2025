@@ -1,4 +1,4 @@
-
+### Outputs of In-Lab Tasks:-
 
 TOTAL_SALARY
 ------------
