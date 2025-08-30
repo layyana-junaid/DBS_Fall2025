@@ -3,7 +3,7 @@
 # 📘 Database Lab Notes  
 **Layyana Junaid 23k-0056**
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Databases%2C%20SQL%2C%20and%20SQL%2FSQL;Designing%20Efficient%20Data%20Systems;Oracle%20SQL%20Developer%20Practices;Learning%20Queries%20Step-by-Step&color=32CD32&center=true&width=700&pause=1500)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?center=true&vCenter=true&pause=1200&width=700&color=2E8B57&lines=SQL+%E2%80%A2+Oracle+%E2%80%A2+DBMS)](https://git.io/typing-svg)
 
 This repo serves as both a **learning journal** and a **reference guide** for everything I practice in SQL and database concepts during my labs.
 
