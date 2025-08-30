@@ -285,7 +285,7 @@ EMPLOYEE_ID PROPER_NAME
 107 rows selected. 
 
 
-NEXT_MOND
+NEXT_MONDAY
 ---------
 22-AUG-22
 
