@@ -1,5 +1,6 @@
 # Outputs of Post Lab Tasks;
 
+# Q11
 EMPLOYEE_ID FIRST_NAME_PADD
 ----------- ---------------
         100 *********Steven
@@ -139,12 +140,12 @@ EMPLOYEE_ID FIRST_NAME_PADD
 
 107 rows selected. 
 
-
+# Q12
 TRIMME
 ------
 Oracle
 
-
+# Q13
 EMPLOYEE_ID PROPER_NAME                                   
 ----------- ----------------------------------------------
         100 Steven King                                   
@@ -284,17 +285,17 @@ EMPLOYEE_ID PROPER_NAME
 
 107 rows selected. 
 
-
+# Q14
 NEXT_MONDAY
 ---------
 22-AUG-22
 
-
+# Q15
 MM_YYYY
 -------
 12-2023
 
-
+# Q16
     SALARY
 ----------
       2100
@@ -373,7 +374,7 @@ MM_YYYY
 
 58 rows selected. 
 
-
+# Q17
     SALARY EMPLOYEE_ID SALARY_ROUNDED_TO100
 ---------- ----------- --------------------
      24000         100                24000
@@ -513,12 +514,12 @@ MM_YYYY
 
 107 rows selected. 
 
-
+# Q18(and 20 are same)
 DEPARTMENT_ID DEPARTMENT_NAME                NUM_EMPLOYEES
 ------------- ------------------------------ -------------
            50 Shipping                                  45
 
-
+# Q19
 DEPARTMENT_ID DEPARTMENT_NAME                TOTAL_SALARY
 ------------- ------------------------------ ------------
            80 Sales                                304500
