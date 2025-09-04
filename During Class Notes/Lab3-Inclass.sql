@@ -36,7 +36,11 @@ insert into DEPARTMENTS(id, dept_name) values(6, 'CYB');
 insert into DEPARTMENTS(id, dept_name) values(7, 'DS');
 
 
+select * from students;
+ALTER table students drop column dept_id;
 
+alter table studnets add( dept_id int, foreign key(dept_id) references departments(id));
+insert into STUDENTS(id , std_name , email , age , city , salary , dept_id) values (4, 'Layyana', 'lj1234@gmail.com', 21, 'Karachi', 40000, 6);
 
 
 
