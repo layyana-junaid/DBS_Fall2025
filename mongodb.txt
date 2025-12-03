@@ -73,3 +73,112 @@ db.book.updateOne(
   { book_id: "B010" },
   { $set: { title: "AI Revolution" }, $mul: { price: 0.9 } }
 )
+
+--More mongo scene 
+db.employees.insertMany([
+  {
+    name: "John Doe",
+    department: "IT",
+    salary: 75000,
+    lastActive: ISODate("2024-10-05"),
+    bonus: 0
+  },
+  {
+    name: "Ali Raza",
+    department: "HR",
+    salary: 55000,
+    lastActive: ISODate("2024-11-20"),
+    bonus: 5000
+  },
+  {
+    name: "Maryam Khan",
+    department: "Finance",
+    salary: 68000,
+    lastActive: ISODate("2024-12-01"),
+    bonus: 0
+  },
+  {
+    name: "Ahmed Malik",
+    department: "HR",
+    salary: 82000,
+    lastActive: ISODate("2024-11-15"),
+    bonus: 2000
+  },
+  {
+    name: "Sara Ali",
+    department: "IT",
+    salary: 90000,
+    lastActive: ISODate("2024-12-08"),
+    bonus: 0
+  }
+]);
+
+
+db.employees.find({ bonus: 0 });
+
+
+db.employees
+  .find({ department: "HR" })
+  .sort({ salary: -1 })
+  .limit(3);
+
+const thirtyDaysAgo = new Date(Date.now() - 30*24*60*60*1000);
+
+db.employees.updateMany(
+  { lastActive: { $gte: thirtyDaysAgo } },
+  { $mul: { salary: 1.10 } }
+);
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: "$customerId",
+      customerName: { $first: "$customerName" },
+      totalSpending: { $sum: "$totalAmount" }
+    }
+  }
+]);
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: "$customerId",
+      customerName: { $first: "$customerName" },
+      orderCount: { $sum: 1 }
+    }
+  },
+  { $match: { orderCount: { $gt: 5 } } }
+]);
+
+db.orders.find({ "items.price": { $gt: 50000 } });
+
+db.employees.updateMany(
+  { lastActive: { $gte: thirtyDaysAgo } },
+  { $mul: { salary: 1.10 } }
+);
+
+db.orders.aggregate([
+  { $unwind: "$items" },
+  {
+    $group: {
+      _id: "$items.product",
+      totalQty: { $sum: "$items.qty" }
+    }
+  },
+  { $sort: { totalQty: -1 } },
+  { $limit: 1 }
+]);
+
+db.employees.find({
+  name: { $regex: /^[AM]/ }
+});
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: { $year: "$orderDate" },
+      totalRevenue: { $sum: "$totalAmount" }
+    }
+  },
+  { $sort: { "_id": 1 } }   // ascending by year
+]);
