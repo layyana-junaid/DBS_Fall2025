@@ -1,4 +1,12 @@
 --employees who have salary higher than the avg salary in the same year
+SELECT e.first_name || ' ' || e.last_name AS employee_name,
+       m.first_name || ' ' || m.last_name AS manager_name,
+       e.salary AS employee_salary,
+       m.salary AS manager_salary
+FROM   employees e
+JOIN   employees m
+       ON e.manager_id = m.employee_id
+WHERE  e.salary > m.salary;
 
 select first_name ||''|| last_name as employee_name, salary from employees
 where salary > (select avg(salary) from employees);
@@ -277,4 +285,5 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Highest bill amount = ' || v_highest);
 END;
 /
+
 
