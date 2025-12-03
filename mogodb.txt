@@ -1,0 +1,75 @@
+MongoDB Commands for Bookstore Assignment
+
+1. Insert Data
+use bookstore
+db.book.insertMany([
+  { "book_id": "B001", "title": "Data Science Fundamentals", "author": "John Smith", "category": "Technology", "price": 29.99, "in_stock": true },
+  { "book_id": "B002", "title": "Learning MongoDB", "author": "Jane Doe", "category": "Technology", "price": 35.99, "in_stock": false },
+  { "book_id": "B003", "title": "Web Development with JavaScript", "author": "Mark Lee", "category": "Programming", "price": 24.99, "in_stock": true },
+  { "book_id": "B004", "title": "Introduction to Python", "author": "Alice Brown", "category": "Programming", "price": 19.99, "in_stock": true },
+  { "book_id": "B005", "title": "Advanced SQL Queries", "author": "Michael White", "category": "Database", "price": 45.99, "in_stock": true },
+  { "book_id": "B006", "title": "C++ Basics", "author": "John Smith", "category": "Programming", "price": 29.99, "in_stock": true },
+  { "book_id": "B007", "title": "Machine Learning with Python", "author": "Sara Green", "category": "Technology", "price": 39.99, "in_stock": true },
+  { "book_id": "B008", "title": "Deep Learning Essentials", "author": "David Grey", "category": "Technology", "price": 59.99, "in_stock": false },
+  { "book_id": "B009", "title": "Data Structures in Java", "author": "Lucas Blue", "category": "Programming", "price": 49.99, "in_stock": true },
+  { "book_id": "B010", "title": "Artificial Intelligence", "author": "Sophia Grey", "category": "Technology", "price": 69.99, "in_stock": true }
+])
+
+2. Update Technology books with price < 40 and set in_stock false
+db.book.updateMany(
+  { category: "Technology", price: { $lt: 40 } },
+  { $mul: { price: 1.10 }, $set: { in_stock: false } }
+)
+
+3. Delete B008 if out of stock
+db.book.deleteOne({ book_id: "B008", in_stock: false })
+
+4. Update John Smith Technology books price to 35
+db.book.updateMany(
+  { author: "John Smith", category: "Technology", price: { $gt: 20 }, in_stock: true },
+  { $set: { price: 35 } }
+)
+
+5. Find Programming books price > 25 and in_stock true, sorted
+db.book.find(
+  { category: "Programming", price: { $gt: 25 }, in_stock: true }
+).sort({ price: -1 })
+
+6. Delete Programming out-of-stock OR price > 50
+db.book.deleteMany({
+  $or: [
+    { category: "Programming", in_stock: false },
+    { price: { $gt: 50 } }
+  ]
+})
+
+7. Update B005 & B006 price = 40 and in_stock true
+db.book.updateMany(
+  { book_id: { $in: ["B005", "B006"] } },
+  { $set: { price: 40, in_stock: true } }
+)
+
+8. Find books by Jane Doe OR category Database, price 30–60
+db.book.find({
+  $and: [
+    { $or: [ { author: "Jane Doe" }, { category: "Database" } ] },
+    { price: { $gte: 30, $lte: 60 } }
+  ]
+})
+
+9. Update Programming books price to 50 if price < 50 and in_stock true
+db.book.updateMany(
+  { category: "Programming", price: { $lt: 50 }, in_stock: true },
+  { $set: { price: 50 } }
+)
+
+10. Delete Technology books with price < 30 and out of stock
+db.book.deleteMany(
+  { category: "Technology", price: { $lt: 30 }, in_stock: false }
+)
+
+11. Rename B010 title and reduce price 10%
+db.book.updateOne(
+  { book_id: "B010" },
+  { $set: { title: "AI Revolution" }, $mul: { price: 0.9 } }
+)
